@@ -1,0 +1,546 @@
+﻿/* =========================================================================
+   Catch Keeper – Global Theme
+   Palette:
+      Navy:        #071626 / #0b2340
+      Deep Blue:   #10476b
+      Light Blue:  #d7f0ff
+      Accent:      #ff5b4d (bobber red)
+      Aqua:        #32c5ff / #5df0c4
+      Soft Gray:   #a9b4c5
+   ========================================================================= */
+
+/* ===== Base ===== */
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+    background-color: #050b14;
+    color: #e9f0ff;
+    margin: 0;
+}
+
+a {
+    color: #32c5ff;
+    text-decoration: none;
+    transition: color 0.15s ease, opacity 0.15s ease;
+}
+
+    a:hover,
+    a:focus {
+        color: #8be9ff;
+    }
+
+/* Layout wrapper */
+
+.kk-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.kk-main {
+    flex: 1 0 auto;
+    padding-top: 30px;
+    padding-bottom: 40px;
+}
+
+/* Footer */
+
+.kk-footer {
+    flex-shrink: 0;
+    background: linear-gradient(to top, #050910, #050910ee, transparent);
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    color: #9fa9bd;
+    font-size: 0.85rem;
+    padding: 16px 0 20px;
+    text-align: center;
+}
+
+.kk-footer-logo {
+    height: 40px;
+    opacity: 0.78;
+    margin-bottom: 6px;
+}
+
+/* =========================================================================
+   Navbar & Branding
+   ========================================================================= */
+
+.kk-navbar {
+    background: linear-gradient(90deg, #071626, #0b2340);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.45);
+}
+
+.kk-brand {
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    font-size: 0.96rem;
+}
+
+.kk-logo-img {
+    height: 36px;
+    width: auto;
+    margin-right: 10px;
+    vertical-align: middle;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.45));
+    transition: transform 0.18s ease, filter 0.18s ease;
+}
+
+.navbar-brand:hover .kk-logo-img {
+    transform: translateY(-1px) scale(1.02);
+    filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.55));
+}
+
+/* Nav links */
+
+.navbar-nav .nav-link {
+    color: #c7d3e7 !important;
+    font-size: 0.95rem;
+    padding: 8px 14px !important;
+    position: relative;
+}
+
+    .navbar-nav .nav-link::after {
+        content: "";
+        position: absolute;
+        left: 14px;
+        right: 14px;
+        bottom: 3px;
+        height: 2px;
+        border-radius: 999px;
+        background: linear-gradient(90deg, #32c5ff, #5df0c4);
+        opacity: 0;
+        transform: scaleX(0.4);
+        transition: opacity 0.25s ease, transform 0.25s ease;
+    }
+
+    .navbar-nav .nav-link:hover::after,
+    .navbar-nav .nav-link:focus::after {
+        opacity: 1;
+        transform: scaleX(1);
+    }
+
+    .navbar-nav .nav-link:hover {
+        color: #ffffff !important;
+    }
+
+/* Active nav state */
+
+.navbar-nav > .active > .nav-link,
+.navbar-nav > li > .nav-link.active {
+    color: #ffffff !important;
+}
+
+    .navbar-nav > .active > .nav-link::after,
+    .navbar-nav > li > .nav-link.active::after {
+        opacity: 1;
+        transform: scaleX(1);
+    }
+
+/* =========================================================================
+   Hero Banner
+   ========================================================================= */
+
+.kk-hero {
+    position: relative;
+    padding: 90px 0 100px 0;
+    margin-bottom: 30px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    background-image: url("/Content/Images/ck_banner.png");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    color: #ffffff;
+    overflow: hidden;
+    box-shadow: 0 18px 38px rgba(0, 0, 0, 0.55);
+}
+
+.kk-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 10% 10%, rgba(215, 240, 255, 0.09), transparent 50%), linear-gradient(115deg, rgba(4, 8, 15, 0.94), rgba(7, 24, 43, 0.92));
+    z-index: 1;
+}
+
+.kk-hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 760px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 0 15px;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.kk-hero h1 {
+    font-size: 2.7rem;
+    font-weight: 700;
+    margin-bottom: 14px;
+    text-shadow: 0 0 8px rgba(0, 0, 0, 0.45);
+}
+
+.kk-hero p {
+    font-size: 1.05rem;
+    color: #e1eeff;
+    margin-bottom: 24px;
+    text-shadow: 0 0 8px rgba(0, 0, 0, 0.45);
+}
+
+.kk-hero-actions .btn {
+    margin: 0 6px 10px;
+}
+
+.kk-hero-meta {
+    margin-top: 18px;
+    font-size: 0.9rem;
+    color: #d0e5ff;
+}
+
+    .kk-hero-meta span {
+        margin: 0 6px;
+        text-shadow: 0 0 6px rgba(0, 0, 0, 0.4);
+    }
+
+/* Hero animation */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================================================================
+   Buttons
+   ========================================================================= */
+
+.kk-btn-primary {
+    background: linear-gradient(135deg, #ff694f, #ff9154);
+    border: none;
+    color: #1b0907 !important;
+    font-weight: 600;
+    padding: 10px 22px;
+    border-radius: 999px;
+    box-shadow: 0 12px 30px rgba(255, 105, 79, 0.45);
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+    transition: transform 0.16s ease, box-shadow 0.16s ease, filter 0.16s ease;
+}
+
+    .kk-btn-primary:hover {
+        filter: brightness(1.05);
+        transform: translateY(-2px);
+        box-shadow: 0 14px 36px rgba(255, 105, 79, 0.55);
+    }
+
+.kk-btn-secondary {
+    background: transparent;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    color: #ffffff !important;
+    font-weight: 500;
+    padding: 9px 20px;
+    font-size: 0.9rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    transition: background 0.16s ease, color 0.16s ease, border-color 0.16s ease, transform 0.16s ease;
+}
+
+    .kk-btn-secondary:hover {
+        background: rgba(0, 0, 0, 0.25);
+        border-color: #ffffff;
+        transform: translateY(-2px);
+    }
+
+/* =========================================================================
+   Sections & Typography
+   ========================================================================= */
+
+.kk-section {
+    padding: 40px 0;
+    position: relative;
+}
+
+.kk-section-light {
+    background: #0b1724;
+    border-top: 1px solid rgba(255, 255, 255, 0.03);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.45);
+}
+
+.kk-section-dark {
+    background: #050b14;
+    border-top: 1px solid rgba(255, 255, 255, 0.03);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.45);
+}
+
+.kk-section-header {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+    .kk-section-header h2 {
+        font-size: 1.9rem;
+        margin-bottom: 6px;
+    }
+
+    .kk-section-header p {
+        color: #aeb9cc;
+        margin: 0;
+    }
+
+.kk-section-header-light h2 {
+    color: #ffffff;
+}
+
+.kk-section-header-light p {
+    color: #c9d4e8;
+}
+
+/* Global heading tweaks */
+
+h2 {
+    font-size: 2rem;
+    letter-spacing: 0.02em;
+}
+
+h3 {
+    font-size: 1.25rem;
+}
+
+/* Make lists breathe a bit more inside sections */
+
+.kk-section ul {
+    margin-bottom: 10px;
+}
+
+/* =========================================================================
+   Feature Cards (Why / Tips / Gear Columns)
+   ========================================================================= */
+
+.kk-feature-card {
+    margin-bottom: 22px;
+    text-align: left;
+    min-height: 180px;
+}
+
+    .kk-feature-card h3 {
+        font-size: 1.15rem;
+        margin-top: 6px;
+        margin-bottom: 10px;
+        font-weight: 700;
+    }
+
+    .kk-feature-card p {
+        color: #c0cbe0;
+    }
+
+/* =========================================================================
+   Home – Recent Catch Cards
+   ========================================================================= */
+
+.kk-catch-card {
+    background: radial-gradient(circle at top left, rgba(50, 197, 255, 0.1), transparent 60%), radial-gradient(circle at bottom right, rgba(93, 240, 196, 0.08), transparent 55%), linear-gradient(145deg, #06101b, #0a1826);
+    border-radius: 10px;
+    padding: 16px 18px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+    transition: transform 0.16s ease, box-shadow 0.16s ease, border-color 0.16s ease;
+}
+
+    .kk-catch-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 20px 44px rgba(0, 0, 0, 0.65);
+        border-color: rgba(93, 240, 196, 0.35);
+    }
+
+.kk-catch-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+}
+
+.kk-catch-species {
+    font-weight: 600;
+    font-size: 1.05rem;
+}
+
+.kk-catch-date {
+    font-size: 0.85rem;
+    color: #96a3c0;
+}
+
+.kk-catch-location {
+    font-size: 0.9rem;
+    color: #ced8f0;
+    margin-bottom: 6px;
+}
+
+.kk-catch-metrics span {
+    margin-right: 10px;
+    font-size: 0.9rem;
+    color: #e5ecff;
+}
+
+.kk-catch-meta span {
+    display: inline-block;
+    margin-right: 10px;
+    font-size: 0.85rem;
+    color: #b8c5df;
+}
+
+.kk-catch-notes {
+    margin-top: 8px;
+    font-size: 0.9rem;
+    color: #d5def6;
+}
+
+.kk-catch-card-footer {
+    margin-top: 10px;
+    font-size: 0.85rem;
+}
+
+.kk-card-link {
+    color: #32c5ff;
+}
+
+    .kk-card-link:hover {
+        color: #8be9ff;
+    }
+
+/* =========================================================================
+   Catch Log Table
+   ========================================================================= */
+
+.kk-page-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 18px;
+    gap: 10px;
+}
+
+    .kk-page-header h2 {
+        margin: 0;
+    }
+
+    .kk-page-header p {
+        margin: 4px 0 0;
+        color: #a5b1c2;
+    }
+
+.kk-table {
+    background: #050b14;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+    .kk-table thead {
+        background: #071424;
+    }
+
+        .kk-table thead th {
+            border-bottom: none;
+            font-weight: 600;
+            color: #f0f5ff;
+            font-size: 0.9rem;
+        }
+
+    .kk-table tbody tr {
+        border-top: 1px solid rgba(255, 255, 255, 0.03);
+    }
+
+        .kk-table tbody tr:hover {
+            background: #0a1523;
+        }
+
+    .kk-table td {
+        vertical-align: middle !important;
+        font-size: 0.9rem;
+    }
+
+.kk-table-actions {
+    white-space: nowrap;
+}
+
+.kk-link {
+    color: #32c5ff;
+}
+
+.kk-link-danger {
+    color: #ff7b7b;
+}
+
+/* =========================================================================
+   Contact Form
+   ========================================================================= */
+
+.kk-contact-form .form-group label {
+    font-size: 0.9rem;
+    color: #cfd8ec;
+}
+
+.kk-contact-form .form-control {
+    background: #071328;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: #e7eefc;
+    box-shadow: none;
+    transition: border-color 0.16s ease, box-shadow 0.16s ease, background 0.16s ease;
+}
+
+    .kk-contact-form .form-control:focus {
+        border-color: #32c5ff;
+        box-shadow: 0 0 0 0.1rem rgba(50, 197, 255, 0.35);
+        background: #050f20;
+    }
+
+.kk-contact-form textarea.form-control {
+    resize: vertical;
+}
+
+/* =========================================================================
+   Responsive Tweaks
+   ========================================================================= */
+
+@media (max-width: 767px) {
+    .kk-hero {
+        padding: 70px 0 80px;
+    }
+
+        .kk-hero h1 {
+            font-size: 2.1rem;
+        }
+
+    .kk-page-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 575px) {
+    .kk-main .container {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+    .kk-page-header {
+        align-items: stretch;
+    }
+}

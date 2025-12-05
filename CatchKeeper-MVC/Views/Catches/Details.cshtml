@@ -1,0 +1,98 @@
+﻿@model CatchKeeperMVC.Models.Catch
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Catch</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CatchDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CatchDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Species)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Species)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LengthInInches)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LengthInInches)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WeightInPounds)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WeightInPounds)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BaitUsed)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BaitUsed)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LocationName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LocationName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Weather)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Weather)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Technique)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Technique)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PhotoUrl)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PhotoUrl)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Notes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Notes)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

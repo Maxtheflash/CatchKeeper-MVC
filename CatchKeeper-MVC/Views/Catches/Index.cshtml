@@ -1,0 +1,49 @@
+﻿@model IEnumerable<CatchKeeperMVC.Models.Catch>
+
+@{
+    ViewBag.Title = "Catch Log";
+}
+
+<div class="kk-page-header">
+    <div>
+        <h2>Catch Log</h2>
+        <p>Browse every catch you’ve logged, filter patterns, and refine your approach.</p>
+    </div>
+    <div>
+        <a href="@Url.Action("Create")" class="btn kk-btn-primary">Log a New Catch</a>
+    </div>
+</div>
+
+<table class="table kk-table">
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Species</th>
+            <th>Length (in)</th>
+            <th>Weight (lbs)</th>
+            <th>Location</th>
+            <th>Bait</th>
+            <th>Technique</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.CatchDate.ToShortDateString()</td>
+                <td>@item.Species</td>
+                <td>@(item.LengthInInches.HasValue ? item.LengthInInches.Value.ToString("0.0") : "-")</td>
+                <td>@(item.WeightInPounds.HasValue ? item.WeightInPounds.Value.ToString("0.0") : "-")</td>
+                <td>@item.LocationName</td>
+                <td>@item.BaitUsed</td>
+                <td>@item.Technique</td>
+                <td class="kk-table-actions">
+                    @Html.ActionLink("Details", "Details", new { id = item.Id }, new { @class = "kk-link" }) |
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "kk-link" }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "kk-link-danger" })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

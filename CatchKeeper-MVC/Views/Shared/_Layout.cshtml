@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Catch Keeper - Fishing Log</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <header>
+        <link rel="icon" type="image/png" href="~/Content/Images/ck_logo.png" />
+        <nav class="navbar navbar-expand-lg navbar-dark kk-navbar">
+            <div class="container">
+                <a class="navbar-brand kk-brand" href="@Url.Action("Index", "Home")">
+                    <img src="~/Content/Images/ck_logo.png" alt="Catch Keeper Logo" class="kk-logo-img" />
+                    Catch Keeper
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="mainNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">@Html.ActionLink("Home", "Index", "Home", null, new { @class = "nav-link" })</li>
+                        <li class="nav-item">@Html.ActionLink("About", "About", "Home", null, new { @class = "nav-link" })</li>
+                        <li class="nav-item">@Html.ActionLink("How It Works", "HowItWorks", "Home", null, new { @class = "nav-link" })</li>
+                        <li class="nav-item">@Html.ActionLink("Fishing Tips", "Tips", "Home", null, new { @class = "nav-link" })</li>
+                        <li class="nav-item">@Html.ActionLink("Gear Guide", "Gear", "Home", null, new { @class = "nav-link" })</li>
+                        <li class="nav-item">@Html.ActionLink("Catch Log", "Index", "Catches", null, new { @class = "nav-link" })</li>
+                        <li class="nav-item">@Html.ActionLink("Contact", "Contact", "Home", null, new { @class = "nav-link" })</li>
+                        <li class="nav-item"> @Html.ActionLink("Roadmap", "Roadmap", "Home", null, new { @class = "nav-link" })</li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="kk-page">
+        <main role="main" class="container kk-main">
+            @RenderBody()
+        </main>
+
+        <footer class="kk-footer">
+            <div class="container">
+                <span>&copy; @DateTime.Now.Year Catch Keeper · Designed &amp; built by Branden Maxwell</span>
+            </div>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+
+</html>

@@ -1,0 +1,101 @@
+﻿@model IEnumerable<CatchKeeperMVC.Models.Catch>
+
+@{
+    ViewBag.Title = "Catch Keeper – Log Every Memory on the Water";
+}
+
+<section class="kk-hero">
+    <div class="kk-hero-content">
+        <h1>Log Every Cast That Counts.</h1>
+        <p>Catch Keeper helps you track your fish, conditions, and patterns so you can fish smarter, not harder.</p>
+        <div class="kk-hero-actions">
+            <a class="btn kk-btn-primary" href="@Url.Action("Create", "Catches")">Log a New Catch</a>
+            <a class="btn kk-btn-secondary" href="@Url.Action("Index", "Catches")">View Catch Log</a>
+        </div>
+        <div class="kk-hero-meta">
+            <span><i class="glyphicon glyphicon-map-marker"></i> Anywhere you fish</span>
+            <span><i class="glyphicon glyphicon-cloud"></i> Track weather &amp; techniques</span>
+            <span><i class="glyphicon glyphicon-stats"></i> Discover winning patterns</span>
+        </div>
+    </div>
+    <div class="kk-hero-overlay"></div>
+</section>
+
+<section class="kk-section kk-section-light">
+    <div class="kk-section-header">
+        <h2>Why Catch Keeper?</h2>
+        <p>Stop guessing and start seeing the patterns behind your best days on the water.</p>
+    </div>
+    <div class="row">
+        <div class="col-md-4 kk-feature-card">
+            <h3>Smart Catch History</h3>
+            <p>Store species, size, bait, location, weather, and techniques for every fish you land.</p>
+        </div>
+        <div class="col-md-4 kk-feature-card">
+            <h3>Pattern Tracking</h3>
+            <p>Quickly spot which baits, spots, and conditions consistently produce your biggest catches.</p>
+        </div>
+        <div class="col-md-4 kk-feature-card">
+            <h3>Built for Anglers</h3>
+            <p>A clean, focused layout designed by an angler for anglers—no clutter, just what matters.</p>
+        </div>
+    </div>
+</section>
+
+<section class="kk-section kk-section-dark">
+    <div class="kk-section-header kk-section-header-light">
+        <h2>Recent Catches</h2>
+        <p>Here’s a snapshot of your latest time on the water.</p>
+    </div>
+
+    @if (Model != null && Model.Any())
+    {
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-md-4">
+                    <div class="kk-catch-card">
+                        <div class="kk-catch-card-header">
+                            <span class="kk-catch-species">@item.Species</span>
+                            <span class="kk-catch-date">@item.CatchDate.ToShortDateString()</span>
+                        </div>
+                        <div class="kk-catch-card-body">
+                            <p class="kk-catch-location"><i class="glyphicon glyphicon-map-marker"></i> @item.LocationName</p>
+                            <p class="kk-catch-metrics">
+                                @if (item.LengthInInches.HasValue)
+                                {
+                                    <span>@item.LengthInInches.Value.ToString("0.0")"</span>
+                                }
+                                @if (item.WeightInPounds.HasValue)
+                                {
+                                    <span>@item.WeightInPounds.Value.ToString("0.0") lbs</span>
+                                }
+                            </p>
+                            <p class="kk-catch-meta">
+                                @if (!string.IsNullOrWhiteSpace(item.BaitUsed))
+                                {
+                                    <span><strong>Bait:</strong> @item.BaitUsed</span>
+                                }
+                                @if (!string.IsNullOrWhiteSpace(item.Technique))
+                                {
+                                    <span><strong>Technique:</strong> @item.Technique</span>
+                                }
+                            </p>
+                            @if (!string.IsNullOrWhiteSpace(item.Notes))
+                            {
+                                <p class="kk-catch-notes">@item.Notes</p>
+                            }
+                        </div>
+                        <div class="kk-catch-card-footer">
+                            @Html.ActionLink("View details", "Details", "Catches", new { id = item.Id }, new { @class = "kk-card-link" })
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+    else
+    {
+        <p class="text-center">No catches logged yet. <a href="@Url.Action("Create", "Catches")">Be the first to log one.</a></p>
+    }
+</section>
