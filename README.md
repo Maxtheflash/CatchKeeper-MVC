@@ -40,26 +40,27 @@ Frontend: Razor, Bootstrap, HTML5
 Tools: Visual Studio, GitHub
 Architecture: MVC Pattern
 
-📂 Project Structure
+## 📂 Project Structure
 CatchKeeperMVC/
-├─ App_Data/
-├─ App_Start/
-├─ Content/
-├─ Controllers/
-├─ Migrations/
-├─ Models/
-├─ Properties/
-├─ Scripts/
-├─ Views/
-│   ├─ Catch/
-│   ├──Shared/
-│   └─ Home/
 │
-├─ favicon.ico
-├─ Global.asax
-├─ Web.config
-├─ CatchKeeperMVC.csproj
-└─ CatchKeeperMVC.sln
+├── App_Data/
+├── App_Start/
+├── Content/
+├── Controllers/
+├── Migrations/
+├── Models/
+├── Properties/
+├── Scripts/
+├── Views/
+│ ├── Catch/
+│ ├── Shared/
+│ └── Home/
+│
+├── favicon.ico
+├── Global.asax
+├── Web.config
+├── CatchKeeperMVC.csproj
+└── CatchKeeperMVC.sln
 
 📸 Screenshots (Coming Soon)
 - Homepage
