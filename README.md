@@ -3,7 +3,7 @@
 Catch Keeper is an ASP.NET MVC application that allows anglers to record, track, and analyze their fishing catches.
 It includes detailed logging, weather notes, water conditions, species tracking, and photo support — all wrapped in a clean, scalable MVC architecture.
 
-Features:
+## Features:
 Catch Logging
 Store detailed catch information:
 - Species
@@ -32,7 +32,7 @@ Secure & Scalable Structure
 - User roles
 - Cloud deployment
 
-Tech Stack
+## Tech Stack
 Language: C#
 Framework: ASP.NET MVC
 Database: SQL Server / LocalDB
@@ -40,7 +40,9 @@ Frontend: Razor, Bootstrap, HTML5
 Tools: Visual Studio, GitHub
 Architecture: MVC Pattern
 
-##  Project Structure
+## Project Structure
+
+```
 CatchKeeperMVC/
 │
 ├── App_Data/
@@ -61,22 +63,23 @@ CatchKeeperMVC/
 ├── Web.config
 ├── CatchKeeperMVC.csproj
 └── CatchKeeperMVC.sln
+```
 
-Screenshots (Coming Soon)
+## Screenshots (Coming Soon)
 - Homepage
 - Add Catch form
 - Catch List screen
 - Edit screen
 - Data table view
 
-Future Enhancements
+## Future Enhancements
 - Weather API integration
 - GPS map tagging
 - Mobile-friendly layout
 - ML.NET prediction engine
 - User login system
 
-Author
+## Author
 Branden Maxwell
 Software Developer (.NET | SQL | MVC)
 GitHub: https://github.com/Maxtheflash
